@@ -4,20 +4,25 @@ import org.bank.list.dao.impl.AccountDAOImpl;
 import org.bank.list.model.Account;
 import org.bank.list.model.User;
 
-import java.util.List;
+import java.util.HashMap;
+import java.util.Map;
+import java.util.function.Supplier;
 
 public class DAOFactory {
 
     private static DAOFactory instance = new DAOFactory();
 
-    private final AccountDAO  accountDAO= new AccountDAOImpl() ;
+    Map<Class, Supplier<AccountDAO>> daoSupplier = new HashMap<>();
 
     private DAOFactory() {
+        daoSupplier.put(Account.class,AccountDAOImpl::new);
     }
 
 
-    public AccountDAO getAccountDAO() {
-        return accountDAO;
+    public AccountDAO getDAO(Class<Account> tClass) {
+        Supplier<AccountDAO> supplier=daoSupplier.get(tClass);
+        AccountDAO dao = supplier.get();
+        return dao;
     }
 
     public static DAOFactory getInstance() {

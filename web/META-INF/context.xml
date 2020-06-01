@@ -7,8 +7,7 @@
     username="root"
     password="570545"
     driverClassName="com.mysql.cj.jdbc.Driver"
-    url="jdbc:mysql://localhost:3306/banklist"
-
+    url="jdbc:mysql://localhost:3306/banklist?useSSL=false&amp;useUnicode=true&amp;useJDBCCompliantTimezoneShift=true&amp;useLegacyDatetimeCode=false&amp;serverTimezone=UTC&amp;useSSL=false"
     validationQuery="select 1"
     maxActive="10"
     maxIdle="4"/>

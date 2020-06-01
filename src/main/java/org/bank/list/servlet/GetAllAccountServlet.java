@@ -2,6 +2,8 @@ package org.bank.list.servlet;
 
 import org.bank.list.dao.DAOFactory;
 import org.bank.list.model.Account;
+import org.bank.list.service.AccountService;
+import org.bank.list.service.impl.AccountServiceImpl;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -12,7 +14,6 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.util.List;
 
-//@WebServlet(urlPatterns = "/userList")
 public class GetAllAccountServlet extends HttpServlet {
 
     @Override
@@ -26,7 +27,8 @@ public class GetAllAccountServlet extends HttpServlet {
     }
 
     private void process(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException{
-        List<Account> accountList =DAOFactory.getInstance().getAccountDAO().getAll();
+        AccountService service=new AccountServiceImpl();
+        List<Account> accountList =service.getAllAccount();
         req.setAttribute("accountList", accountList);
         RequestDispatcher dispatcher=this.getServletContext()
                 .getRequestDispatcher("/userList.jsp");

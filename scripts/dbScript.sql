@@ -1,8 +1,18 @@
 CREATE DATABASE banklist;
 
-CREATE TABLE `user` (  `userid` INT NOT NULL AUTO_INCREMENT,  `name` varchar(45) NOT NULL,  `surename` varchar(45) NOT NULL,  PRIMARY KEY (`userid`) );
+CREATE TABLE `user` (
+  `userid` INT NOT NULL AUTO_INCREMENT,
+  `name` varchar(45) NOT NULL,
+  `surename` varchar(45) NOT NULL,
+  PRIMARY KEY (`userid`) 
+);
 
-CREATE TABLE `account` (  `accountid` INT NOT NULL AUTO_INCREMENT,  `account` INT NOT NULL,  `userid` INT NOT NULL,  PRIMARY KEY (`accountid`) );
+CREATE TABLE `account` (
+  `accountid` INT NOT NULL AUTO_INCREMENT,
+  `account` INT NOT NULL,
+  `userid` INT NOT NULL,
+  PRIMARY KEY (`accountid`)
+ );
 
 ALTER TABLE `account` ADD CONSTRAINT `account_fk0` FOREIGN KEY (`userid`) REFERENCES `user`(`userid`);
 

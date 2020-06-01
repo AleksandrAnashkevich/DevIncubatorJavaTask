@@ -23,7 +23,6 @@ public class GetRichestAccountServlet extends HttpServlet {
 
     private void process(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         AccountService service = new AccountServiceImpl();
-        System.out.println(service.getRichestAccount());
         req.setAttribute("richestAccount", service.getRichestAccount());
         RequestDispatcher dispatcher = this.getServletContext()
                 .getRequestDispatcher("/index.jsp");

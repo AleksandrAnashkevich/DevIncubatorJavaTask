@@ -2,7 +2,6 @@ package org.bank.list.servlet;
 
 import org.bank.list.service.AccountService;
 import org.bank.list.service.impl.AccountServiceImpl;
-
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;

@@ -47,7 +47,7 @@
                         <table border="0">
                             <tr>
                                 <td>
-                                    <input type="text" value="${sumAccounts}">
+                                    <input type="text" placeholder="accounts sum" value="${sumAccounts}">
                                 </td>
                                 <td>
                                     <input type="submit" value="Get">
@@ -61,8 +61,8 @@
                         <table border="0">
                             <tr>
                                 <td>
-                                    <input type="text"
-                                           value="${richestAccount.getUser().getName()} ${richestAccount.getUser().getSureName()}">
+                                    <input type="text" placeholder="richest user"
+                                           value="${richestAccount.getUser().getName()}${richestAccount.getUser().getSureName()}">
                                 </td>
                                 <td>
                                     <input type="submit" value="Get">

@@ -11,22 +11,22 @@ public class AccountServiceImpl implements AccountService {
     @Override
     public Account getAccountById(String idStr) {
         int id = Integer.parseInt(idStr);
-        return DAOFactory.getInstance().getAccountDAO().getById(id);
+        return DAOFactory.getInstance().getDAO(Account.class).getById(id);
     }
 
     @Override
     public List<Account> getAllAccount() {
-        return DAOFactory.getInstance().getAccountDAO().getAll();
+        return DAOFactory.getInstance().getDAO(Account.class).getAll();
     }
 
     @Override
     public Account getRichestAccount() {
-        return DAOFactory.getInstance().getAccountDAO().getRichestAccount();
+        return DAOFactory.getInstance().getDAO(Account.class).getRichestAccount();
     }
 
     @Override
     public int getSumAccount() {
-        return DAOFactory.getInstance().getAccountDAO().getSumAccount();
+        return DAOFactory.getInstance().getDAO(Account.class).getSumAccount();
     }
 
 }
