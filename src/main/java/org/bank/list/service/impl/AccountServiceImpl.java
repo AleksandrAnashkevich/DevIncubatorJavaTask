@@ -29,4 +29,25 @@ public class AccountServiceImpl implements AccountService {
         return DAOFactory.getInstance().getDAO(Account.class).getSumAccount();
     }
 
+    @Override
+    public Account getRichestAccount(List<Account> accountList) {
+        Account richestAccount=accountList.get(0);
+        for(Account account:accountList){
+            if (account.getAccount()>richestAccount.getAccount()){
+                richestAccount=account;
+            }
+        }
+        return richestAccount;
+    }
+
+    @Override
+    public int getSumAccount(List<Account> accountList) {
+
+        int sumAccount=0;
+        for(Account account:accountList){
+            sumAccount+=account.getAccount();
+        }
+        return sumAccount;
+    }
+
 }

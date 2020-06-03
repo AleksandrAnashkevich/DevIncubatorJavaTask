@@ -11,6 +11,10 @@ public interface AccountService {
 
     Account getRichestAccount();
 
+    Account getRichestAccount(List<Account> accountList);
+
     int getSumAccount();
+
+    int getSumAccount(List<Account> accountList);
 
 }
